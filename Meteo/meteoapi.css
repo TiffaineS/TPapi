@@ -1,0 +1,19 @@
+#tps, #desc, #temp, #ress, #hum ,#press, #vitv{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    border: solid 1px lightgoldenrodyellow;
+    background-color: beige;
+    gap: 5px;
+    margin: 10px;
+    font-size: 15px;
+}
+
+h1{
+    text-align: center;
+}
+
+#informations{
+    padding: 100px;
+}
