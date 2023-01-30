@@ -33,7 +33,7 @@ padding: 10px;
     height: 400px;
     width: 300px;
     background: url(pika1.png) no-repeat;
-    background-size: contain;
+    background-size: 80%;
     background-position: center;
     background-color: #f4d22e;
 }
@@ -63,23 +63,44 @@ padding: 10px;
     padding-top: 80px;
 }
 
+#namepok {
+    text-align: center;
+}
+
 #box3de1 {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 20px;
-    margin-bottom: 20px;
     margin-left: 10px;
     margin-right: 10px;
 }
 
+
 #boxsearch {
     position: absolute;
-    top: 400px;
-    left: 450px;
+    top: 380px;
+    left: 435px;
 }
 
 h1 {
-    margin-left: 20px;
-    margin-top: 10px;
+    padding-left: 25px;
+    margin-top: 5px;
+}
+
+#textcover {
+    color: gray;
+    margin-top: -25px;
+    padding-left: 10px;
+}
+
+#boxinfos {
+    position: absolute;
+    top: 450px;
+    left: 150px;
+}
+
+#labelinfos {
+    margin: 0;
+    color: gray;
 }

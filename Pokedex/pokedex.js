@@ -16,9 +16,13 @@ let box2 = createDom("div","",book);
 box2.setAttribute("id","box2");
 let titlecover = createDom("h1","POKEDEX",box2);
 titlecover.setAttribute("id","titlecover");
+let textcover = createDom("p","(Cliquez pour ouvrir le livre!)",box2);
+textcover.setAttribute("id","textcover");
 let boxsearch = createDom("div","",book);
 boxsearch.setAttribute("id","boxsearch");
 let label = createDom("div","Entrez un nom de pokémon :",boxsearch);
+let labelinfos = createDom("p","(écrire tout en minuscule et en anglais)",boxsearch);
+labelinfos.setAttribute("id","labelinfos");
 let input = createDom("input","",boxsearch);
 input.setAttribute("id","champsaisi");
 let button = createDom("button","Valider",boxsearch);
@@ -98,9 +102,6 @@ button.addEventListener('click', function(){
 })
 
 
-
-
-
 async function getData() {
     try {
         const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${number}/`);
@@ -112,10 +113,11 @@ async function getData() {
 
         imagepok.setAttribute("src",data.sprites.front_default);
 
+        let namepok = createDom("p",`Name : ${data.name}`,box1de1);
+        namepok.setAttribute("id","namepok");
+
         let box3de1 = createDom("div", "", box3);
         box3de1.setAttribute("id","box3de1");
-        let namepok = createDom("p",`Name : ${data.name}`,box3de1);
-        namepok.setAttribute("id","namepok");
         let heightpok = createDom("p",`Taille : ${data.height/10} m`,box3de1);
         heightpok.setAttribute("id","heightpok");
         let weightpok = createDom("p",`Poids : ${data.weight/10} kg`,box3de1);
@@ -135,6 +137,9 @@ async function getData() {
             console.log(abi);
         }
 
+        let boxinfos = createDom("p","Vous pouvez appuyer sur la flèche gauche et droite du clavier pour naviguer.",box3de1);
+        boxinfos.setAttribute("id","boxinfos");
+
     } catch (error) {
         console.error(error);
     }
@@ -142,7 +147,7 @@ async function getData() {
 
 
 $(document).ready(function(){
-    $("#box2").click(function(){
+    $("#box2").click(function covpag(){
         box2.style.display = "none";
         $("#box3").animate({
             width: "50%",
@@ -154,8 +159,6 @@ $(document).ready(function(){
 
 $(document).ready(function(){
     $("#box3").click(function(){
-        document.getElementById("box3de1");
-        box3de1.remove()
         number++;
         console.log(number);
         $("#box3").animate({
@@ -179,6 +182,8 @@ $(document).ready(function(){
             }, 500);
         }, 500);
         getData();
+        namepok.remove();
+        box3de1.remove()
     });
 });
 
@@ -211,6 +216,8 @@ $(document).ready(function(){
             }, 500);
         }, 500);
         getData();
+        namepok.remove();
+        box3de1.remove()
         } else {
             box2.style.display = "block";
             $("#box1").animate({
@@ -227,6 +234,71 @@ $(document).ready(function(){
 
 document.addEventListener("keydown", function(event) {
     if (event.code === "ArrowLeft") {
-      // Code à exécuter lorsque la flèche gauche est enfoncée
+      console.log("Left arrow key is pressed");
+            number--;
+            console.log(number);
+            if (number > 0){
+            document.getElementById("box3de1");
+            box3de1.remove()
+            $("#box3").animate({
+                width: "0",
+                marginRight: "100%"
+            }, 500);
+            setTimeout(function() {
+                $("#box3").animate({
+                    width: "100%",
+                    marginRight: "0"
+                }, 500);
+            }, 500);
+            $("#box1").animate({
+                width: "0",
+                marginLeft: "100%"
+            }, 500);
+            setTimeout(function() {
+                $("#box1").animate({
+                    width: "100%",
+                    marginLeft: "0"
+                }, 500);
+            }, 500);
+            getData();
+            namepok.remove();
+            } else {
+                box2.style.display = "block";
+                $("#box1").animate({
+                    width: "0",
+                    marginLeft: "50%"
+                }, 500);
+                box1de1.remove();
+                box3.remove();
+                location.reload();
+            }
+    } else if (event.code === "ArrowRight") {
+      console.log("Right arrow key is pressed");
+            document.getElementById("box3de1");
+            box3de1.remove()
+            number++;
+            console.log(number);
+            $("#box3").animate({
+                width: "0",
+                marginRight: "100%"
+            }, 500);
+            setTimeout(function() {
+                $("#box3").animate({
+                    width: "100%",
+                    marginRight: "0"
+                }, 500);
+            }, 500);
+            $("#box1").animate({
+                width: "0",
+                marginLeft: "100%"
+            }, 500);
+            setTimeout(function() {
+                $("#box1").animate({
+                    width: "100%",
+                    marginLeft: "0"
+                }, 500);
+            }, 500);
+            getData();
+            namepok.remove();
     }
-  });
+})
