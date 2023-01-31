@@ -1,3 +1,11 @@
+#container { 
+    display: flex;
+    flex-direction: row;
+    height: 510px;
+    width: 950px;
+
+}
+
 #tps, #desc, #temp, #ress, #hum ,#press, #vitv{
     display: flex;
     justify-content: center;
@@ -6,14 +14,165 @@
     border: solid 1px lightgoldenrodyellow;
     background-color: beige;
     gap: 5px;
-    margin: 10px;
-    font-size: 15px;
+    margin: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 14px;
 }
 
-h1{
+h1 {
     text-align: center;
 }
 
-#informations{
-    padding: 100px;
+#box {
+    display: flex;
+    flex-direction: row;
+    height: 535px;
+    width: 330px;
 }
+
+#informations {
+    padding: 10px;
+    height: 515px;
+    width: 210px;
+}
+
+#boxill{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#card {
+    background: url(carte_france_vierge.png) no-repeat;
+    background-size: 100%;
+    height: 500px;
+    width: 500px;
+}
+
+#point1, #point2, #point3, #point4, #point5, #point6, #point7, #point8, #point9, #point10 {
+    height: 10px;
+    width: 10px;
+    background-color: red;
+} 
+
+#point1 {
+    position: absolute;
+    top: 395px;
+    left: 335px;
+}
+
+#text1 {
+    position: absolute;
+    top: 410px;
+    left: 335px;
+}
+
+#point2 {
+    position: absolute;
+    top: 400px;
+    left: 250px;
+}
+
+#text2 {
+    position: absolute;
+    top: 415px;
+    left: 250px;
+}
+
+#point3 {
+    position: absolute;
+    top: 340px;
+    left: 180px;
+}
+
+#text3 {
+    position: absolute;
+    top: 355px;
+    left: 180px;
+}
+
+#point4 {
+    position: absolute;
+    top: 210px;
+    left: 180px;
+}
+
+#text4 {
+    position: absolute;
+    top: 225px;
+    left: 180px;
+}
+
+#point5 {
+    position: absolute;
+    top: 220px;
+    left: 380px;
+}
+
+#text5 {
+    position: absolute;
+    top: 235px;
+    left: 380px;
+}
+
+#point6 {
+    position: absolute;
+    top: 205px;
+    left: 445px;
+}
+
+#text6 {
+    position: absolute;
+    top: 220px;
+    left: 445px;
+}
+
+#point7 {
+    position: absolute;
+    top: 150px;
+    left: 290px;
+}
+
+#text7 {
+    position: absolute;
+    top: 165px;
+    left: 290px;
+}
+
+#point8 {
+    position: absolute;
+    top: 140px;
+    left: 420px;
+}
+
+#text8 {
+    position: absolute;
+    top: 155px;
+    left: 420px;
+}
+
+#point9 {
+    position: absolute;
+    top: 70px;
+    left: 305px;
+}
+
+#text9 {
+    position: absolute;
+    top: 85px;
+    left: 305px;
+}
+
+#point10 {
+    position: absolute;
+    top: 165px;
+    left: 40px;
+}
+
+#text10 {
+    position: absolute;
+    top: 180px;
+    left: 40px;
+}
+
