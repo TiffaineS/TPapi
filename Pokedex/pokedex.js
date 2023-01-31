@@ -63,7 +63,7 @@ async function getData0() {
 
         let box3de1 = createDom("div", "", box3);
         box3de1.setAttribute("id","box3de1");
-        let namepok = createDom("p",`Name : ${data.name}`,box3de1);
+        let namepok = createDom("p",`Name : ${data.name}`,box1de1);
         namepok.setAttribute("id","namepok");
         let heightpok = createDom("p",`Taille : ${data.height/10} m`,box3de1);
         heightpok.setAttribute("id","heightpok");
@@ -97,8 +97,10 @@ async function getData0() {
 
 button.addEventListener('click', function(){
     getData0();
-    document.getElementById(box3de1);
+    document.getElementById("box3de1");
     box3de1.remove();
+    document.getElementById("namepok");
+    namepok.remove();
 })
 
 
